@@ -1,12 +1,41 @@
+'''
+Midterm question tests
+'''
 #write function tests here, don't add input('') statements here!
 import unittest
 
 #follow this example to add questions b, c, and d for testing including their functions
-from src.question_a.question_a import test_config
+from src.question_a.question_a import reverse_string
+from src.question_b.question_b import get_day_of_week
+from src.question_c.question_c import use_local_variable
 
-class Test_Config(unittest.TestCase):
+#class tests_strings(unittest.TestCase):
 
-    def test_question_a_config(self):
-        self.assertEqual(True, test_config())
+class test_config(unittest.TestCase):
+
+    def test_hello_world(self):
+        input_string = "Hello, World!"
+        result = reverse_string(input_string)
+        self.assertEqual(result, "!dlroW ,olleH")
+
+    def test_hello(self):
+        input_string = "hello"
+        result = reverse_string(input_string)
+        self.assertEqual(result, "olleh")
 
 
+    #Tests for question_b
+    def test_invalid_number(self):
+        self.assertEqual(get_day_of_week(0), "Invalid number. Please enter a number in the range of 1 through 7.")
+        self.assertEqual(get_day_of_week(8), "Invalid number. Please enter a number in the range of 1 through 7.")
+
+    def test_valid_numbers(self):
+        self.assertEqual(get_day_of_week(1), "Monday")
+        self.assertEqual(get_day_of_week(2), "Tuesday")
+        self.assertEqual(get_day_of_week(3), "Wednesday")
+
+    #Tests for question_c
+    def test_function_with_num_100(self):
+        num = 100
+        #use_local_variable(num)
+        self.assertEqual(num, 100)
