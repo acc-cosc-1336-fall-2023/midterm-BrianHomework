@@ -8,6 +8,7 @@ import unittest
 from src.question_a.question_a import reverse_string
 from src.question_b.question_b import get_day_of_week
 from src.question_c.question_c import use_local_variable
+from src.question_d.question_d import get_tax_assessed, get_assessment_value
 
 #class tests_strings(unittest.TestCase):
 
@@ -39,3 +40,12 @@ class test_config(unittest.TestCase):
         num = 100
         #use_local_variable(num)
         self.assertEqual(num, 100)
+
+    #Tests for question_d
+    def test_get_assessment_value_10000(self):
+        result = get_assessment_value(10000)
+        self.assertEqual(result, 6000)
+
+    def test_get_assessment_value_20000(self):
+        result = get_assessment_value(20000)
+        self.assertEqual(result, 12000)
