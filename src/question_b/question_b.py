@@ -12,16 +12,3 @@ def get_day_of_week(day):
         return days[day - 1]
     else:
         return "Invalid number. Please enter a number in the range of 1 through 7."
-
-def main():
-    while True:
-        try:
-            day_number = int(input("Enter a number (1 through 7): "))
-            day_of_week = get_day_of_week(day_number)
-            print("Day of the week:", day_of_week)
-        except ValueError:
-            print("Error: Please enter a valid number.")
-        
-        choice = input("Do you want to try again? (yes/no): ").lower()
-        if choice not in ('yes', 'y'):
-            break
